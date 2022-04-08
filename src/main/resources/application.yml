@@ -1,0 +1,24 @@
+debug: false
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:sampledb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    defaultSchema:
+    maxPoolSize: 10
+    hibernate:
+      ddl-auto: none
+      hbm2ddl.method: validate
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.H2Dialect
+  h2.console.enabled: true
+  h2.console.path: /h2-console
+  liquibase:
+    change-log: classpath:liquibase/main.changelog.xml
+  jackson.serialization.fail-on-empty-beans: false
